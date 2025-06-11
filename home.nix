@@ -5,6 +5,10 @@
   ...
 }:
 {
+  imports = [
+    ./modules
+  ];
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -23,6 +27,7 @@
       wget
       element-desktop
       wezterm
+      git-lfs
     ]; 
   };
 
