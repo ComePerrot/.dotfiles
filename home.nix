@@ -29,6 +29,7 @@
       wezterm
       git-lfs
       zotero
+      uv
     ]; 
   };
 
