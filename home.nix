@@ -28,6 +28,7 @@
       element-desktop
       wezterm
       git-lfs
+      zotero
     ]; 
   };
 
