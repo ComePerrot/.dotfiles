@@ -17,19 +17,22 @@
   home = {
     stateVersion = "24.11";
 
-    username = lib.mkDefault "cperrot"; 
-    homeDirectory = lib.mkDefault "/home/cperrot";
+    # username = lib.mkDefault "cperrot"; 
+    # homeDirectory = lib.mkDefault "/home/cperrot";
 
     packages = with pkgs; [
       # Other utils
+      eza
       ncdu
       tlrc
       wget
-      element-desktop
       wezterm
       git-lfs
       zotero
       uv
+
+      nixd
+      alejandra
     ]; 
   };
 

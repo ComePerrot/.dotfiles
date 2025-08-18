@@ -2,52 +2,51 @@
   description = "A simple flake for home-manager";
 
   inputs = {
-	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-	flake-parts = {
-	      url = "github:hercules-ci/flake-parts";
-	      inputs.nixpkgs-lib.follows = "nixpkgs";
-	    };
-
-	home-manager = {
-	    type = "github";
-	    owner = "nix-community";
-	    repo = "home-manager";
-	    inputs.nixpkgs.follows = "nixpkgs";
-	  };
-
-	nixvim = {
-	      url = "github:nix-community/nixvim";
-	      inputs.nixpkgs.follows = "nixpkgs";
-	    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      perSystem =
-        { pkgs, self', inputs', system, ... }:
-        {
-	  packages = {
-	    inherit (inputs'.home-manager.packages) home-manager;
-	  };
-        };
-	flake = 
-	  let
-	    system = "x86_64-linux";
-	    pkgs = import inputs.nixpkgs {
-	      system = "x86_64-linux";
-	      config = {
-		allowUnfree = true;
-	      };
-	    };
-	  in
-	  {
-	    homeConfigurations.cperrot = inputs.home-manager.lib.homeManagerConfiguration {
-	      inherit pkgs;
-	      extraSpecialArgs = { inherit inputs; };
-	      modules = [ ./home.nix ];
-	    };
-	  };
-    };
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
 
+      # usernames = ["cperrot" "cj"];
+
+      perSystem = {
+        system,
+        lib,
+        ...
+      }: let
+        name = "cperrot";
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      in {
+        legacyPackages.homeConfigurations = {
+            ${name} = inputs.home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = {inherit inputs;};
+              modules =
+                [
+                  ./home.nix
+                ]
+                ++ [
+                  {
+                    home = {
+                      username = lib.mkDefault name;
+                      homeDirectory = lib.mkDefault "/home/${name}" ;
+                    };
+                  }
+                ];
+            };
+        };
+      };
+    };
 }
