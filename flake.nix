@@ -14,14 +14,12 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
-      # usernames = ["cperrot" "cj"];
-
       perSystem = {
         system,
         lib,
         ...
       }: let
-        name = "cperrot";
+        names = ["cperrot" "cj"];
         pkgs = import inputs.nixpkgs {
           inherit system;
           config = {
@@ -29,24 +27,21 @@
           };
         };
       in {
-        legacyPackages.homeConfigurations = {
-            ${name} = inputs.home-manager.lib.homeManagerConfiguration {
+        legacyPackages.homeConfigurations = lib.genAttrs names (
+            name: inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               extraSpecialArgs = {inherit inputs;};
-              modules =
-                [
-                  ./home.nix
-                ]
-                ++ [
+              modules = 
+                 [
                   {
                     home = {
                       username = lib.mkDefault name;
                       homeDirectory = lib.mkDefault "/home/${name}" ;
                     };
                   }
-                ];
-            };
-        };
+                ] ++ [./home.nix];
+            }
+        );
       };
     };
 }
