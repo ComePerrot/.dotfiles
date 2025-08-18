@@ -7,5 +7,6 @@
 {
   imports = [
     ./git.nix
+    ./element.nix
   ];
 }
