@@ -2,9 +2,15 @@
   pkgs,
   lib,
   inputs,
+  nixgl,
   ...
 }:
 {
+
+  nixGL.packages = import nixgl { inherit pkgs; };
+  nixGL.defaultWrapper = "mesa";
+  nixGL.installScripts = [ "mesa" ];
+
   imports = [
     ./modules
   ];
@@ -26,7 +32,7 @@
       ncdu
       tlrc
       wget
-      wezterm
+      (config.lib.nixGL.wrap wezterm)
       git-lfs
       zotero
       uv
