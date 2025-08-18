@@ -16,6 +16,7 @@
 
       perSystem = {
         system,
+        inputs',
         lib,
         ...
       }: let
@@ -27,6 +28,10 @@
           };
         };
       in {
+        packages = {
+          inherit (inputs'.home-manager.packages) home-manager; # Required for first run of home-manager
+	      };
+
         legacyPackages.homeConfigurations = lib.genAttrs names (
             name: inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
