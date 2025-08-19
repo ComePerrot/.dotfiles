@@ -1,0 +1,89 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+add_newline = false
+
+palette = "synthwave_alpha"
+
+[directory]
+style = 'bright_blue'
+truncation_length = 3
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[character]
+success_symbol = '[❯](bright_green)'
+error_symbol = '[❯](bright_red)'
+
+[cmd_duration]
+style = 'bright_white'
+format = '\[[⏱ $duration]($style)\]'
+
+[fill]
+symbol=' '
+
+[git_branch]
+style = 'bright_magenta'
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+style = 'bright_magenta'
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[hostname]
+style = 'bright_green'
+format = '[@$hostname]($style) '
+ssh_only = false
+
+[nix_shell]
+format = '\[[$symbol$state( \($name\))]($style)\]'
+
+[python]
+python_binary = [".venv/bin/python","python"]
+symbol = ' '
+format = '\[[${symbol}( $virtualenv)( ${version})]($style)\]'
+version_format = '${major}.${minor}'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
+[sudo]
+format = '\[[as $symbol]($style)\]'
+
+[time]
+disabled = false
+style = 'bright_white'
+format = '\[[$time]($style)\]'
+
+[username]
+style_user = 'bright_green'
+format = '[$user]($style)'
+show_always = true
+
+[palettes.synthwave_alpha]
+black = '#241B30'
+red = '#9A0048'
+green = '#00986C'
+yellow = '#ADAD3E'
+blue = '#6E29AD'
+magenta = '#B300AD'
+cyan = '#00B0B1'
+white = '#B9B1BC'
+bright_black = '#7F7094'
+bright_red = '#E60A70'
+bright_green = '#0AE4A4'
+bright_yellow = '#F9F972'
+bright_blue = '#AA54F9'
+bright_magenta = '#FF00F6'
+bright_cyan = '#00FBFD'
+bright_white = '#F2F2E3'
