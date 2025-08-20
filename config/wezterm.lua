@@ -62,6 +62,8 @@ config.front_end = "WebGpu"
 config.default_cursor_style = 'SteadyBlock'
 config.animation_fps = 30
 
+config.default_prog = {'/usr/bin/bash'}
+
 if os_name == "Windows" then
   config.wsl_domains = {
 	{

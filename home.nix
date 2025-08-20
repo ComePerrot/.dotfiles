@@ -26,12 +26,14 @@
     # homeDirectory = lib.mkDefault "/home/cperrot";
 
     packages = with pkgs; [
+      # Font
+      cascadia-code
+      
       # Other utils
       eza
       ncdu
       tlrc
       wget
-      (config.lib.nixGL.wrap wezterm)
       zotero
       uv
 
