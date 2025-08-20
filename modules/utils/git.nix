@@ -16,6 +16,7 @@
         core.editor = "nvim";
         github.user = "ComePerrot";
         mergetool.prompt = false;
+        rebase.autostash = true;
         pull.rebase = true;
         init.defaultBranch = "main";
       };
