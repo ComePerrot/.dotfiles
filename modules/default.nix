@@ -6,7 +6,9 @@
 }:
 {
   imports = [
-    ./git.nix
-    ./element.nix
+    ./desktopApps/element.nix
+    ./shell/aliases.nix
+    ./utils/git.nix
+    
   ];
 }

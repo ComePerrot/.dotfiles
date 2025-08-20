@@ -32,7 +32,6 @@
       tlrc
       wget
       (config.lib.nixGL.wrap wezterm)
-      git-lfs
       zotero
       uv
 
