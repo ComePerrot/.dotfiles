@@ -29,15 +29,15 @@
       # Font
       cascadia-code
       
+      # Nix utils
+      nixd
+      alejandra
+
       # Other utils
       ncdu
       tlrc
       wget
-      zotero
       uv
-
-      nixd
-      alejandra
     ]; 
   };
 
