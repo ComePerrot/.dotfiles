@@ -17,8 +17,8 @@
   # Need to activate bash to automatically run Zsh in new session
   programs.bash = {
     enable = true;
-    bashrcExtra = ''
-      exec zsh
-    '';
+#    bashrcExtra = ''
+#      exec zsh
+#    '';
   };
 }
