@@ -30,7 +30,6 @@
       cascadia-code
       
       # Other utils
-      eza
       ncdu
       tlrc
       wget

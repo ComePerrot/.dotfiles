@@ -5,10 +5,6 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
-    git-lfs
-  ];
-
   programs = {
     git = {
       enable = true;
@@ -25,8 +21,6 @@
         init.defaultBranch = "main";
       };
     };
-
-    # git-lfs.enable = true;
 
     gh = {
       enable = true;
