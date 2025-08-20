@@ -3,7 +3,6 @@
   lib,
   imports,
   ...
-}:
-{
+}: {
   home.packages = with pkgs; [zotero];
 }

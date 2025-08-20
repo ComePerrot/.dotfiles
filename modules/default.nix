@@ -3,8 +3,7 @@
   lib,
   imports,
   ...
-}:
-{
+}: {
   imports = [
     ./desktopApps/element.nix
     ./desktopApps/zotero.nix

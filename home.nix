@@ -4,11 +4,11 @@
   pkgs,
   nixgl,
   ...
-}:
-{
-  nixGL.packages = import nixgl { inherit pkgs; };
+}: {
+  # NixGL is necessary for some apps to run properly on non NixOS systems
+  nixGL.packages = import nixgl {inherit pkgs;};
   nixGL.defaultWrapper = "mesa";
-  nixGL.installScripts = [ "mesa" ];
+  nixGL.installScripts = ["mesa"];
 
   imports = [
     ./modules
@@ -22,13 +22,10 @@
   home = {
     stateVersion = "24.11";
 
-    # username = lib.mkDefault "cperrot"; 
-    # homeDirectory = lib.mkDefault "/home/cperrot";
-
     packages = with pkgs; [
       # Font
       cascadia-code
-      
+
       # Nix utils
       nixd
       alejandra
@@ -38,7 +35,7 @@
       tlrc
       wget
       uv
-    ]; 
+    ];
   };
 
   fonts = {
