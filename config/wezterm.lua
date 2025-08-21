@@ -62,7 +62,7 @@ config.front_end = "WebGpu"
 config.default_cursor_style = 'SteadyBlock'
 config.animation_fps = 30
 
-config.default_prog = {'/home/cj/.nix-profile/bin/zsh', '-l'}
+config.default_prog = {wezterm.home_dir..'/.nix-profile/bin/zsh', '-l'}
 
 if os_name == "Windows" then
   config.wsl_domains = {
