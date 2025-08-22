@@ -8,6 +8,7 @@
     ./browsers/firefox.nix
     ./desktopApps/element.nix
     ./desktopApps/tidal.nix
+    ./desktopApps/vlc.nix
     ./desktopApps/zotero.nix
     ./shell/aliases.nix
     ./shell/zsh.nix
