@@ -5,7 +5,9 @@
   ...
 }: {
   imports = [
+    ./browsers/firefox.nix
     ./desktopApps/element.nix
+    ./desktopApps/tidal.nix
     ./desktopApps/zotero.nix
     ./shell/aliases.nix
     ./shell/zsh.nix
