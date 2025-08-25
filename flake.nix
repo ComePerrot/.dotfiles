@@ -13,6 +13,7 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = inputs @ {
@@ -32,9 +33,8 @@
         names = ["cperrot" "cj"];
         pkgs = import inputs.nixpkgs {
           inherit system;
-          config = {
-            allowUnfree = true;
-          };
+          config.allowUnfree = true;
+          overlays = [ nix-vscode-extensions.overlays.default ];
         };
       in {
         packages = {
