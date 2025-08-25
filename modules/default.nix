@@ -10,6 +10,7 @@
     ./desktopApps/tidal.nix
     ./desktopApps/vlc.nix
     ./desktopApps/zotero.nix
+    ./editors/vscode.nix
     ./shell/aliases.nix
     ./shell/zsh.nix
     ./terminal/starship.nix
