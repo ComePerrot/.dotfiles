@@ -9,8 +9,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -57,6 +57,7 @@
                       homeDirectory = lib.mkDefault "/home/${name}";
                     };
                   }
+                  inputs.nur.modules.homeManager.default
                 ]
                 ++ [./home.nix];
             }

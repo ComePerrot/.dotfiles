@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  imports,
   ...
 }:
 {
@@ -23,12 +21,21 @@
           default = "ddg";
           order = [ "ddg" "google" ];
         };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          keepassxc-browser
-          ghostery
-          ublock-origin
-        #  vimium
-        #];
+        extensions = {
+          force = true;
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            keepassxc-browser
+            ghostery
+            ublock-origin
+          #  vimium
+          ];
+        };
+        settings = {
+          extensions.autoDisableScopes = 0;
+          extensions.update.autoUpdateDefault = false;
+          extensions.update.enabled = false;
+
+        };
       };
     };
   };
