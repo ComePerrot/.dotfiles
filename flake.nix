@@ -19,6 +19,7 @@
   outputs = inputs @ {
     flake-parts,
     nixgl,
+    nix-vscode-extensions,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
