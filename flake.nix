@@ -9,14 +9,28 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nur.follows = "nur";
+        flake-parts.follows = "flake-parts";
+      };
+    };
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
   };
 
@@ -24,6 +38,8 @@
     flake-parts,
     nixgl,
     nix-vscode-extensions,
+    nur,
+    stylix,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -62,7 +78,8 @@
                       homeDirectory = lib.mkDefault "/home/${name}";
                     };
                   }
-                  inputs.nur.modules.homeManager.default
+                  nur.modules.homeManager.default
+                  stylix.homeModules.stylix
                 ]
                 ++ [./home.nix];
             }
