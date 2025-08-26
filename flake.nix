@@ -14,6 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
