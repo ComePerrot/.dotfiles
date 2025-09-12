@@ -54,7 +54,7 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ nix-vscode-extensions.overlays.default ];
+          overlays = [nix-vscode-extensions.overlays.default];
         };
       in {
         packages = {
