@@ -1,12 +1,12 @@
 {inputs, ...}:
 {
   imports = [ 
-    inputs.nixvim.homeModules.nixvim
+    inputs.nvf.homeManagerModules.default
   ];
 
   home.shellAliases.view = "nvim -R";
 
-  programs.nixvim = {
+  programs.nvf = {
     enable = true;
   };
 }
