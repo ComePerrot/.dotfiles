@@ -1,0 +1,37 @@
+{
+    "editor.rulers": [
+        79,
+        119
+    ],
+    "indentRainbow.includedLanguages": [
+        "python",
+        "yaml",
+        "latex"
+    ],
+    /*GitLens Configuration*/
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    /*Python Configuration*/
+    "[python]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+
+    // "python.formatting.blackArgs": ["--line-length", "119"],
+    "autoDocstring.docstringFormat": "google-notypes",
+
+    /* LTeX configuration*/
+    "ltex.enabled": [
+        "bibtex",
+        "latex",
+        "markdown",
+        // "cpp",
+        // "python",
+        // "html",
+    ],
+    "ltex.checkFrequency": "save",
+    "ltex.additionalRules.motherTongue": "fr",
+
+    "continue.enableTabAutocomplete": false,
+}
