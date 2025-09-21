@@ -17,10 +17,8 @@
         "editor.tabSize": 2,
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
-
     // "python.formatting.blackArgs": ["--line-length", "119"],
     "autoDocstring.docstringFormat": "google-notypes",
-
     /* LTeX configuration*/
     "ltex.enabled": [
         "bibtex",
@@ -32,6 +30,5 @@
     ],
     "ltex.checkFrequency": "save",
     "ltex.additionalRules.motherTongue": "fr",
-
     "continue.enableTabAutocomplete": false,
 }

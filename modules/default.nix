@@ -20,5 +20,6 @@
     ./terminal/wezterm.nix
     ./utils/eza.nix
     ./utils/git.nix
+    ./stylix.nix
   ];
 }
