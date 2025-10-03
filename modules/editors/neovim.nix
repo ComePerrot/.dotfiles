@@ -12,6 +12,11 @@
       viAlias = true;
       vimAlias = true;
 
+      options ={
+        tabstop = 2;
+        shiftwidth = 0; # Use tabstop value
+      };
+
       spellcheck = {
         enable = false;
         languages = ["en" "fr"];
