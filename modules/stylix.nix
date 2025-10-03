@@ -1,6 +1,6 @@
 {pkgs, ...}: {  
   stylix = {
-    enable = true;
+    enable = false;
     autoEnable =false;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";

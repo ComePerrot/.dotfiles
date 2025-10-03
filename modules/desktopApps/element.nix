@@ -5,7 +5,7 @@
   ...
 }: {
   programs.element-desktop = {
-    enable = true;
+    enable = false;
     package = pkgs.element-desktop.overrideAttrs {
       # ref. https://github.com/fabiospampinato/atomically/issues/13
       postFixup = ''

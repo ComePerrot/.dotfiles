@@ -4,7 +4,7 @@
   ...
 }: {
   programs.vscode = {
-  enable = true;
+  enable = false;
   profiles.default.extensions = with pkgs.nix-vscode-extensions.open-vsx; [
     # Utils
     # continue.continue
