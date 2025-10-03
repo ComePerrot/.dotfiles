@@ -1,6 +1,6 @@
 {pkgs, ...}: {  
   stylix = {
-    enable = true;
+    enable = false;
     autoEnable =false;
 
     base16Scheme = builtins.fetchurl {

@@ -4,5 +4,5 @@
   imports,
   ...
 }: {
-  programs.keepassxc.enable = true;
+  programs.keepassxc.enable = false;
 }

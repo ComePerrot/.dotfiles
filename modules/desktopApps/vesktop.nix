@@ -5,7 +5,7 @@
   ...
 }: {
   programs.vesktop = {
-    enable = true;
+    enable = false;
     settings = {
       discordBranch = "stable";
       minimizeToTray = false;

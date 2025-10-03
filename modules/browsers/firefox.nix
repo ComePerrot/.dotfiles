@@ -4,7 +4,7 @@
 }:
 {
   programs.firefox = {
-    enable = true;
+    enable = false;
     languagePacks = [ "en-US" "fr" ];
     profiles = {
       default = {
