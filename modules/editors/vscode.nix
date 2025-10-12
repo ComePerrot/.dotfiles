@@ -18,6 +18,8 @@
     charliermarsh.ruff
     # Nix
     jnoortheen.nix-ide
+    # Toml
+    tamasfe.even-better-toml
   ];
 };
 
