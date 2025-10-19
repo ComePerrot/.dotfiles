@@ -51,7 +51,9 @@ config.initial_rows = 30
 -- Changing the font size and color scheme.
 config.font = wezterm.font('Cascadia Code', {weight  = 'Regular'})
 config.font_size = 12
-config.color_scheme = 'Synthwave Alpha (Gogh)'
+
+config.colors = require("cyberdream")
+-- config.color_scheme = 'Synthwave Alpha (Gogh)'
 
 -- Disabling notifications
 config.audible_bell = "Disabled"
