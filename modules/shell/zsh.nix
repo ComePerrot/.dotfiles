@@ -1,7 +1,25 @@
-{pkgs, ...}: {
+{pkgs, ...}: 
+let 
+  historySize = 100000;
+in {
   programs.zsh = {
     enable = true;
     autocd = true;
+
+    history = {
+      size = historySize;
+      save = historySize;
+
+      append = true;
+      expireDuplicatesFirst = true;
+      extended = true;
+      findNoDups = true;
+      ignoreAllDups = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+      saveNoDups = true;
+      share = true;
+    };
 
     initContent = "
       bindkey ';5C' forward-word
