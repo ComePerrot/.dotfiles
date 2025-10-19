@@ -13,7 +13,7 @@ $character"""
 
 add_newline = false
 
-palette = "synthwave_alpha"
+palette = "cyberdream"
 
 [directory]
 style = 'bright_blue'
@@ -87,3 +87,21 @@ bright_blue = '#AA54F9'
 bright_magenta = '#FF00F6'
 bright_cyan = '#00FBFD'
 bright_white = '#F2F2E3'
+
+[palettes.cyberdream]
+black = '#16181a'
+red = '#ff6e5e'
+green = '#5eff6c'
+yellow = '#f1ff5e'
+blue = '#5ea1ff'
+magenta = '#bd5eff'
+cyan = '#5ef1ff'
+white = '#ffffff'
+bright_black = '#7F7094'
+bright_red = '#ff6e5e'
+bright_green = '#5eff6c'
+bright_yellow = '#f1ff5e'
+bright_blue = '#5ea1ff'
+bright_magenta = '#bd5eff'
+bright_cyan = '#5ef1ff'
+bright_white = '#ffffff'
