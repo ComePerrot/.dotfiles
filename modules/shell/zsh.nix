@@ -2,6 +2,11 @@
   programs.zsh = {
     enable = true;
     autocd = true;
+
+    initContent = "
+      bindkey ';5C' forward-word
+      bindkey ';5D' backward-word
+    ";
   };
 
   programs.zsh.antidote = {
