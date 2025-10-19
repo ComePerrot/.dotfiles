@@ -5,6 +5,8 @@
 
   home.shellAliases.view = "nvim -R";
 
+  stylix.targets.nvf.enable = true;
+
   programs.nvf = {
     enable = true;
 
