@@ -52,7 +52,7 @@ config.initial_rows = 30
 config.font = wezterm.font('Cascadia Code', {weight  = 'Regular'})
 config.font_size = 12
 
-config.colors = require("cyberdream")
+config.colors = require("themes/cyberdream")
 -- config.color_scheme = 'Synthwave Alpha (Gogh)'
 
 -- Disabling notifications
