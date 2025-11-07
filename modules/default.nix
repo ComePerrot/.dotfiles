@@ -20,6 +20,7 @@
     ./terminal/wezterm.nix
     ./utils/eza.nix
     ./utils/git.nix
+    ./utils/podman.nix
     ./stylix.nix
   ];
 }
