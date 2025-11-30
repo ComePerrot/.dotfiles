@@ -6,9 +6,9 @@
   ...
 }: {
   # NixGL is necessary for some apps to run properly on non NixOS systems
-  nixGL.packages = import nixgl {inherit pkgs;};
-  nixGL.defaultWrapper = "mesa";
-  nixGL.installScripts = ["mesa"];
+  targets.genericLinux.nixGL.packages = import nixgl {inherit pkgs;};
+  targets.genericLinux.nixGL.defaultWrapper = "mesa";
+  targets.genericLinux.nixGL.installScripts = ["mesa"];
 
   imports = [
     ./modules
@@ -35,6 +35,10 @@
       tlrc
       wget
       uv
+    ];
+
+    sessionPath = [
+      "$HOME/.local/bin"
     ];
   };
 
