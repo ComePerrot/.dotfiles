@@ -21,10 +21,21 @@ in {
       share = true;
     };
 
-    initContent = "
+    initContent = ''
       bindkey ';5C' forward-word
       bindkey ';5D' backward-word
-    ";
+
+      bindkey '^H' backward-kill-word
+      bindkey '^[[3~' delete-char
+      bindkey '^[[3;5~' kill-word
+
+      # OSC 7 for WezTerm - communicates current dir
+      if [[ "$TERM_PROGRAM" == "WezTerm" ]]; then
+        precmd() {
+          printf "\033]7;file://%s%s\033\\" "$HOST" "$PWD"
+        }
+      fi
+    '';
   };
 
   programs.zsh.antidote = {
