@@ -7,6 +7,7 @@
   imports = [
     ./browsers/firefox.nix
     ./desktopApps/element.nix
+    ./desktopApps/filen.nix
     ./desktopApps/keepassxc.nix
     ./desktopApps/tidal.nix
     ./desktopApps/vesktop.nix
