@@ -19,6 +19,17 @@
     },
     // "python.formatting.blackArgs": ["--line-length", "119"],
     "autoDocstring.docstringFormat": "google-notypes",
+    /*Nix Configuration*/
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.formatterPath": "alejandra",
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": ["alejandra"]
+            }
+        }
+    }
     /* LTeX configuration*/
     "ltex.enabled": [
         "bibtex",
@@ -31,4 +42,5 @@
     "ltex.checkFrequency": "save",
     "ltex.additionalRules.motherTongue": "fr",
     "continue.enableTabAutocomplete": false,
+    "chat.disableAIFeatures": true,
 }
