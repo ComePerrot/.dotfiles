@@ -41,8 +41,8 @@
 
         nix = {
           enable = true;
-          format.type = "alejandra";
-          lsp.server = "nixd";
+          format.type = ["alejandra"];
+          lsp.servers = ["nixd"];
         };
         markdown.enable = true;
         python.enable = true;
