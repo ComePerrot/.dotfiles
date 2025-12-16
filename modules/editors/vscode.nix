@@ -14,8 +14,8 @@
       # Spell check
       ltex-plus.vscode-ltex-plus # Mozilla Public License 2.0
       # Python
-      ms-python.python # MIT License
       ms-python.debugpy # MIT License
+      charliermarsh.ruff # MIT License
       # Nix
       jnoortheen.nix-ide # MIT License
       # Toml
