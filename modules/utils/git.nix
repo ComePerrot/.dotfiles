@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  imports,
-  ...
-}: {
+{...}: {
   programs = {
     git = {
       enable = true;

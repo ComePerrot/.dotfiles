@@ -1,7 +1,7 @@
-{pkgs, ...}: {  
+{...}: {
   stylix = {
     enable = true;
-    autoEnable =false;
+    autoEnable = false;
 
     base16Scheme = builtins.fetchurl {
       url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";

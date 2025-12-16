@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  imports,
-  ...
-}: {
+{...}: {
   programs.element-desktop = {
     enable = true;
   };

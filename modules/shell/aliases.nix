@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  imports,
-  ...
-}: {
+{...}: {
   home.shellAliases = {
     c = "clear";
     grep = "grep --color=auto";

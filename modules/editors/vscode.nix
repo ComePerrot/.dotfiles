@@ -22,10 +22,9 @@
       tamasfe.even-better-toml # MIT License
     ];
     # profiles.default.extensions = with pkgs.nix-vscode-extensions.open-vsx; [];
-};
+  };
 
   xdg.configFile."Code/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/vscode_settings.json";
 
   stylix.targets.vscode.enable = false;
-
 }

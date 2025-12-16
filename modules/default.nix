@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  imports,
-  ...
-}: {
+{...}: {
   imports = [
     ./browsers/firefox.nix
     ./desktopApps/element.nix

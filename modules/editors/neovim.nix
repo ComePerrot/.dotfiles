@@ -14,7 +14,7 @@
       viAlias = true;
       vimAlias = true;
 
-      options ={
+      options = {
         tabstop = 2;
         shiftwidth = 0; # Use tabstop value
       };

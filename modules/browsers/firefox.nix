@@ -1,11 +1,7 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   programs.firefox = {
     enable = true;
-    languagePacks = [ "en-US" "fr" ];
+    languagePacks = ["en-US" "fr"];
     profiles = {
       default = {
         id = 0;
@@ -19,7 +15,7 @@
         search = {
           force = true;
           default = "ddg";
-          order = [ "ddg" "google" ];
+          order = ["ddg" "google"];
         };
         extensions = {
           force = true;
@@ -27,19 +23,18 @@
             keepassxc-browser
             ghostery
             ublock-origin
-          #  vimium
+            #  vimium
           ];
         };
         settings = {
           extensions.autoDisableScopes = 0;
           extensions.update.autoUpdateDefault = false;
           extensions.update.enabled = false;
-
         };
       };
     };
   };
 
   # Tell Stylix which profile(s) to theme
-  stylix.targets.firefox.profileNames = [ "default" ];
+  stylix.targets.firefox.profileNames = ["default"];
 }
