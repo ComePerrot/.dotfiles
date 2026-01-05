@@ -5,7 +5,8 @@
 }: {
   programs.vscode = {
     enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = 
+      (with pkgs.vscode-extensions; [
       # AI assistant
       continue.continue # Apache License 2.0
       # Utils
@@ -14,14 +15,17 @@
       # Spell check
       ltex-plus.vscode-ltex-plus # Mozilla Public License 2.0
       # Python
-      ms-python.debugpy # MIT License
+      # ms-python.debugpy # MIT License
       charliermarsh.ruff # MIT License
       # Nix
       jnoortheen.nix-ide # MIT License
       # Toml
       tamasfe.even-better-toml # MIT License
-    ];
-    # profiles.default.extensions = with pkgs.nix-vscode-extensions.open-vsx; [];
+    ])
+    ++
+    (with pkgs.nix-vscode-extensions.open-vsx; [
+      astral-sh.ty # MIT License
+    ]);
   };
 
   xdg.configFile."Code/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/vscode_settings.json";

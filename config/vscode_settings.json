@@ -41,6 +41,8 @@
     ],
     "ltex.checkFrequency": "save",
     "ltex.additionalRules.motherTongue": "fr",
+    /*Continue*/
     "continue.enableTabAutocomplete": false,
+    "continue.telemetryEnabled": false,
     "chat.disableAIFeatures": true,
 }
