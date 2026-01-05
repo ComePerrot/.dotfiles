@@ -1,5 +1,5 @@
 {...}: {
-  programs.vesktop = {
+  programs.discord = {
     enable = true;
     settings = {
       discordBranch = "stable";
